@@ -180,7 +180,7 @@ function LoginComponent2() {
                         <div className="wrap d-md-flex">
                             <div className="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
                                 <div className="text w-100">
-                                    <h2>Welcome to Quoc Minh Shop</h2>
+                                    <h2>Welcome to Brada Shop</h2>
                                     <p>Don't have an account?</p>
                                 </div>
                             </div>

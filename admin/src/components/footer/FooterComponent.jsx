@@ -8,7 +8,7 @@ export default function FooterComponent() {
       <div className="row justify-content-center">
         <div className="col-md-9 text-center">
           <div className="footer-site-logo mb-4">
-            <a href="#"> Quoc Minh</a>
+            <a href="#">Brada</a>
           </div>
           <ul className="list-unstyled nav-links mb-5">
             <li><a href="#">About</a></li>
