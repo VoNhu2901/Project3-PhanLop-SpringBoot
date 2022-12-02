@@ -12,13 +12,12 @@ function BillComponent() {
     const navigate = useNavigate()
 
     const [bill, setBill] = useState({})
+    console.log("Bill: ", bill);
     const [billItems, setBillItems] = useState([])
-    const [status, setStatus] = useState('');
 
     useEffect(() => {
         BillService.getBillDetail(billId)
             .then(res => {
-                console.log(res.data);
                 if (res.status === 200) {
                     setBill(res.data)
                     setBillItems(res.data.cartDetails)
@@ -26,7 +25,6 @@ function BillComponent() {
                 }
             })
             .catch(err => {
-                console.log(err)
                 if (err.response) {
                     if (err.response.status === 403) {
                         navigate('/login')

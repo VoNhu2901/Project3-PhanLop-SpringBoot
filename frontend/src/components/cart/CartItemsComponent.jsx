@@ -66,6 +66,7 @@ export default function CartItemsComponent() {
         })
             .then(res => {
                 if (res.status == 200) {
+                    console.log("res.data: ", res.data)
                     setCartItems(res.data.cartDetails);
                     setTotalPrice(res.data.totalPrice);
                 }
@@ -85,7 +86,6 @@ export default function CartItemsComponent() {
             })
     }, [itemChange]);
 
-    //useEffect()
 
     const calculateItemTotalPrice = (e) => {
         console.log(e.target.value)
@@ -209,7 +209,7 @@ export default function CartItemsComponent() {
 
     return (
         <>
-            <Header status={itemChange} />
+            <Header status={itemChange ? false : true} />
             <section className="shop-cart spad">
                 <div className="container">
                     <div className="row">
