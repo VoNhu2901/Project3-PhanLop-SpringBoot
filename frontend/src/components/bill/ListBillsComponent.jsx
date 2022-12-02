@@ -13,7 +13,6 @@ export default function ListBillsComponent() {
     useEffect(() => {
         BillService.getAllBills()
             .then(res => {
-                console.log(res.data)
                 setBills(res.data)
                 setLoginStatus(true)
             })
