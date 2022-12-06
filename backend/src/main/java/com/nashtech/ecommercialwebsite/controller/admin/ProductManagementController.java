@@ -17,12 +17,12 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
 import javax.validation.Valid;
 
 @Tag(name = "Product Resources Management",
         description = "Manage all the product resources, this include CRUD")
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/admin/api/products")
 public class ProductManagementController {
 
@@ -121,7 +121,7 @@ public class ProductManagementController {
                     description = "Internal Error - There were some error while processing in server",
                     content = {@Content(examples = {@ExampleObject()})})
     })
-    public FileUploadResponse upLoad( @RequestParam(value = "file") MultipartFile multipartFile) {
+    public FileUploadResponse upLoad(@RequestParam(value = "file") MultipartFile multipartFile) {
         return cloudinaryService.upload(multipartFile);
     }
 

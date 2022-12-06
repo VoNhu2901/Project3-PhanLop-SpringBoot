@@ -8,13 +8,16 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "comments")
-@Getter @Setter @Builder
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Comment {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Integer id;
+    private Integer id;
 
     @Column(name = "noidung")
     private String message;
@@ -29,7 +32,4 @@ public class Comment {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private Account account;
-
-
-
 }

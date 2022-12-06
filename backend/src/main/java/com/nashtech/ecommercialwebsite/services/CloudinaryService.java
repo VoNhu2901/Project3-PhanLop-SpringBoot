@@ -5,6 +5,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface CloudinaryService {
 
-     FileUploadResponse upload(MultipartFile multipartFile);
+    FileUploadResponse upload(MultipartFile multipartFile);
 
 }

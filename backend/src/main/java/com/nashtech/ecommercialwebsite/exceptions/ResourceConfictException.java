@@ -1,6 +1,6 @@
 package com.nashtech.ecommercialwebsite.exceptions;
 
-public class ResourceConfictException extends RuntimeException{
+public class ResourceConfictException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
 

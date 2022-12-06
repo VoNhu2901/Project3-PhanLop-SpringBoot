@@ -2,7 +2,9 @@ package com.nashtech.ecommercialwebsite.dto.response;
 
 import lombok.*;
 
-@Getter @Setter @Builder
+@Getter
+@Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class CartItemDto {

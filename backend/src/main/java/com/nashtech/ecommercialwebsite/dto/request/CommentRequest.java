@@ -7,7 +7,8 @@ import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 
-@Getter @Setter
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class CommentRequest {

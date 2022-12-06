@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 
-public interface RatingRepository extends JpaRepository<Rating, Long > {
+public interface RatingRepository extends JpaRepository<Rating, Long> {
 
     @Query(value = "select avg(r.rating_points) from ratings r where r.product_id = ?1", nativeQuery = true)
     Double getRatingPointsFromProduct(int id);
@@ -19,6 +19,4 @@ public interface RatingRepository extends JpaRepository<Rating, Long > {
 
     Rating findRatingByAccountAndProduct(Account account, Product product);
 
-   /* @Query(nativeQuery = true)
-    RatingResponse getUserRatingByProduct(@Param("productId") int productId, @Param("userId") int userId);*/
 }

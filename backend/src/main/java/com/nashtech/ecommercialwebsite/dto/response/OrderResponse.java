@@ -1,6 +1,7 @@
 package com.nashtech.ecommercialwebsite.dto.response;
 
 import lombok.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 public class OrderResponse {
 
-    private List<CartItemsResponse>  cartDetails = new ArrayList<>();
+    private List<CartItemsResponse> cartDetails = new ArrayList<>();
 
     private int priceTotal;
 

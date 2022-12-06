@@ -1,6 +1,6 @@
 package com.nashtech.ecommercialwebsite.exceptions;
 
-public class InternalServerException extends RuntimeException{
+public class InternalServerException extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
     public InternalServerException() {

@@ -1,6 +1,7 @@
 package com.nashtech.ecommercialwebsite.dto.response;
 
 import lombok.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,5 +24,5 @@ public class BillPaginationResponse {
 
     private boolean last;
 
-   // LoginStatusResponse loginStatusResponse = new LoginStatusResponse();
+    // LoginStatusResponse loginStatusResponse = new LoginStatusResponse();
 }

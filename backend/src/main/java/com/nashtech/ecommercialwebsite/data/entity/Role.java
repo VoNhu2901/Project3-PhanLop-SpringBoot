@@ -9,14 +9,16 @@ import java.util.Set;
 
 @Entity
 @Table(name = "roles")
-@Getter @Setter @Builder
+@Getter
+@Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private  Integer id;
+    private Integer id;
 
     @Column(name = "role")
     private String roleName;
@@ -25,7 +27,7 @@ public class Role {
     private String description;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "role",  cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Account> accounts;
 
 }

@@ -42,9 +42,9 @@ public class RatingServiceImpl implements RatingService {
                 .orElseThrow(() -> new ResourceNotFoundException(
                         String.format("Username %s not found ", username)));
         return new RatingResponse(
-               ratingRepository.getRatingPointsFromProduct(productId),
-               ratingRepository.getUserRatingPointsByProduct(account.getId(), productId)
-       );
+                ratingRepository.getRatingPointsFromProduct(productId),
+                ratingRepository.getUserRatingPointsByProduct(account.getId(), productId)
+        );
     }
 
     @Override
@@ -52,7 +52,7 @@ public class RatingServiceImpl implements RatingService {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         // authentication valid
-        if(authentication != null) {
+        if (authentication != null) {
             String currentUser = authenticationFacadeService.getCurentUsername();
 
             Product product = productRepository.findById(userRatingRequest.getProductId())
@@ -67,8 +67,8 @@ public class RatingServiceImpl implements RatingService {
             RatingResponse ratingResponse = getUserRatingByProduct(userRatingRequest.getProductId());
 
             //user's never rated this product before -> create new rating
-            if(ratingResponse.getUserRatingPoints() == null) {
-                log.info(String.format("FIRST TIME RATING PRODUCT OF USER  %s",currentUser));
+            if (ratingResponse.getUserRatingPoints() == null) {
+                log.info(String.format("FIRST TIME RATING PRODUCT OF USER  %s", currentUser));
                 Rating rating = Rating.builder()
                         .ratingPoints(userRatingRequest.getRatingPoints())
                         .product(product)

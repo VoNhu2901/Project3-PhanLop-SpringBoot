@@ -7,7 +7,9 @@ import javax.validation.constraints.NotNull;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter @Setter @Builder
+@Getter
+@Setter
+@Builder
 public class BrandRequest {
 
     @NotBlank(message = "Name cannot be blank")

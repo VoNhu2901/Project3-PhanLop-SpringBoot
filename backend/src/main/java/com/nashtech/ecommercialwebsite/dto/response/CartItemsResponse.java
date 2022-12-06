@@ -2,8 +2,12 @@ package com.nashtech.ecommercialwebsite.dto.response;
 
 import lombok.*;
 
-@Getter @Setter @Builder @ToString
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@Builder
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class CartItemsResponse {
 
     //private CartDetailId cartItemId;

@@ -5,26 +5,25 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "carts")
-@Getter @Setter @Builder
+@Getter
+@Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
-    private  Integer id;
+    @Column(name = "id")
+    private Integer id;
 
     @JsonIgnore
     @OneToOne(mappedBy = "cart")
     private Account account;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "cart" , fetch = FetchType.EAGER,  cascade = CascadeType.ALL)
-//    private Set<CartDetail> cartDetails;
+    @OneToMany(mappedBy = "cart", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<CartDetail> cartDetails;
-
- }
+}

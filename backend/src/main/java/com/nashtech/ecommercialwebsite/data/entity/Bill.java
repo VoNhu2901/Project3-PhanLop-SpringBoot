@@ -5,18 +5,22 @@ import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "bills")
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter @Setter @Builder
+@Getter
+@Setter
+@Builder
 public class Bill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
-    private  Integer id;
+    @Column(name = "id")
+    private Integer id;
 
     //Đã duyệt hay chưa duyệt
     @Column(name = "status")

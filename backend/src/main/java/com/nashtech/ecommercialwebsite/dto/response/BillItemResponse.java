@@ -4,7 +4,8 @@ import lombok.*;
 
 @ToString
 @Builder
-@Getter @Setter
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class BillItemResponse {

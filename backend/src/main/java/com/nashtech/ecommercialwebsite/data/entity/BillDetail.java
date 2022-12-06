@@ -9,7 +9,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "bill_detail")
 @RequiredArgsConstructor
-@Getter @Setter
+@Getter
+@Setter
 public class BillDetail {
     @EmbeddedId
     private BillDetailId id;

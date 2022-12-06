@@ -1,9 +1,12 @@
 package com.nashtech.ecommercialwebsite.dto.response;
 
 import lombok.*;
+
 import java.util.List;
 
-@Getter @Setter @Builder
+@Getter
+@Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserAccountResponse {

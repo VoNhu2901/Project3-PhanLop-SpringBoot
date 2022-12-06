@@ -7,10 +7,11 @@ import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter @Setter
+@Getter
+@Setter
 public class UserRatingResponse {
 
-    private String mess ;
+    private String mess;
 
     private int ratingPoints;
 

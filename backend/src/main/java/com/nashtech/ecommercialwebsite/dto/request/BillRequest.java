@@ -12,6 +12,6 @@ import java.util.List;
 @ToString
 public class BillRequest {
 
-    List<CartItemUpdateDto> cartDetails =  new ArrayList<>();
+    List<CartItemUpdateDto> cartDetails = new ArrayList<>();
 
 }

@@ -1,7 +1,7 @@
 package com.nashtech.ecommercialwebsite.services;
 
-import com.nashtech.ecommercialwebsite.dto.response.RegistrationResponse;
 import com.nashtech.ecommercialwebsite.dto.request.RegistrationRequest;
+import com.nashtech.ecommercialwebsite.dto.response.RegistrationResponse;
 import com.nashtech.ecommercialwebsite.dto.response.TokenResponse;
 
 public interface RegistrationService {

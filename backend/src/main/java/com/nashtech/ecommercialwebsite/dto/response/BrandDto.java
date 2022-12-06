@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 public class BrandDto {
 
-    private  Integer id;
+    private Integer id;
 
     private String name;
 

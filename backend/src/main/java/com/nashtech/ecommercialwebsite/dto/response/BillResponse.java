@@ -15,15 +15,15 @@ public class BillResponse {
 
     private List<BillItemResponse> cartDetails = new ArrayList<>();
 
-    private  int billId;
+    private int billId;
 
     private int status;
 
     private int priceTotal;
 
-    private  String firstName;
+    private String firstName;
 
-    private  String lastName;
+    private String lastName;
 
     private String phone;
 

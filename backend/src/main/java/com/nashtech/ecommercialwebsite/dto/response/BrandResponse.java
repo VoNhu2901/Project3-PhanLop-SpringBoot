@@ -7,7 +7,8 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter @Setter
+@Getter
+@Setter
 public class BrandResponse {
 
     private List<BrandDto> brandContent;

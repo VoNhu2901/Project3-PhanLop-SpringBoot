@@ -4,13 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @AllArgsConstructor
-@Getter @Setter
+@Getter
+@Setter
 public class RegistrationRequest {
 
     @NotBlank(message = "firstName is required")

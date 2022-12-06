@@ -5,21 +5,19 @@ import com.nashtech.ecommercialwebsite.dto.request.UserRequest;
 import com.nashtech.ecommercialwebsite.dto.response.UserAccountDto;
 import com.nashtech.ecommercialwebsite.dto.response.UserAccountResponse;
 
-import javax.servlet.http.HttpServletRequest;
-
 public interface UserService {
 
-     String signUpUser(Account userAccount);
+    String signUpUser(Account userAccount);
 
-     UserAccountResponse getAllUserAccounts(int pageNo,
-                                            int pageSize,
-                                            String sortBy,
-                                            String sortDirection);
+    UserAccountResponse getAllUserAccounts(int pageNo,
+                                           int pageSize,
+                                           String sortBy,
+                                           String sortDirection);
 
-     UserAccountDto getAccountById(int id);
+    UserAccountDto getAccountById(int id);
 
-     UserAccountDto changeUserAccountStatus(UserRequest userRequest, int userId);
+    UserAccountDto changeUserAccountStatus(UserRequest userRequest, int userId);
 
-     void createShoppingCart(String username);
+    void createShoppingCart(String username);
 
 }

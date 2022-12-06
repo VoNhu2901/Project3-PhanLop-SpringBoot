@@ -3,7 +3,6 @@ package com.nashtech.ecommercialwebsite.services.impl;
 import com.nashtech.ecommercialwebsite.exceptions.InternalServerException;
 import com.nashtech.ecommercialwebsite.services.EmailSender;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;

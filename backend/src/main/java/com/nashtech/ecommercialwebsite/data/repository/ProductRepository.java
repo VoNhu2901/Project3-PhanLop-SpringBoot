@@ -16,7 +16,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
     // find product which is available (hidden = false)
     Page<Product> findProductByHidden(boolean hidden, Pageable pageable);
 
-    Page<Product> findProductByGender (boolean gender, Pageable pageable);
+    Page<Product> findProductByGender(boolean gender, Pageable pageable);
 
     @Query(value = "select  id from products where hidden = ?1 ", nativeQuery = true)
     List<Integer> findAllProductIds(boolean hidden);

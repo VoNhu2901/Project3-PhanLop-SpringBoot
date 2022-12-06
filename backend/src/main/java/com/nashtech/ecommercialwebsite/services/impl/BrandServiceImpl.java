@@ -60,7 +60,7 @@ public class BrandServiceImpl implements BrandService {
     public SingleBrandResponse save(BrandRequest brandRequest) {
         Optional<Brand> optionalBrand = brandRepository.findBrandByName(brandRequest.getName());
 
-        if(optionalBrand.isPresent()) {
+        if (optionalBrand.isPresent()) {
             throw new ResourceConfictException(String.format("Brand with name: %s is already exist!",
                     brandRequest.getName()));
         }

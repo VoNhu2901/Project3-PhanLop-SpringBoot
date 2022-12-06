@@ -13,11 +13,11 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @Tag(name = "Customer bill resource",
         description = "Provide show bills history of customer, show bill detail also")
-@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @AllArgsConstructor
 @RequestMapping("/customer/api/order")
@@ -41,7 +41,7 @@ public class BillController {
     })
     @ResponseStatus(HttpStatus.OK)
     public BillResponse purchaseBill(@RequestBody BillRequest billRequest) {
-        return billService.orderProducts( billRequest);
+        return billService.orderProducts(billRequest);
     }
 
     @GetMapping("/bill/{id}")
@@ -81,8 +81,6 @@ public class BillController {
     public List<BillDetailReponse> getBillDetailByAccount() {
         return billService.getBillByAccount();
     }
-
-
 
 
 }

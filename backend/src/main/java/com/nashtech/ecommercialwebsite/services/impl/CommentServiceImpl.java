@@ -10,7 +10,6 @@ import com.nashtech.ecommercialwebsite.dto.request.CommentRequest;
 import com.nashtech.ecommercialwebsite.dto.response.CommentResponse;
 import com.nashtech.ecommercialwebsite.dto.response.ListCommentResponse;
 import com.nashtech.ecommercialwebsite.exceptions.ResourceNotFoundException;
-import com.nashtech.ecommercialwebsite.exceptions.UnauthorizedException;
 import com.nashtech.ecommercialwebsite.security.jwt.JwtUtils;
 import com.nashtech.ecommercialwebsite.services.AuthenticationFacadeService;
 import com.nashtech.ecommercialwebsite.services.CommentService;
@@ -22,6 +21,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -39,10 +39,8 @@ public class CommentServiceImpl implements CommentService {
     private final JwtUtils jwtUtils;
 
     private final UserRepository userRepo;
-
-    private ModelMapper mapper;
-
     private final AuthenticationFacadeService authenticationFacadeService;
+    private ModelMapper mapper;
 
     @Override
     public CommentResponse comment(CommentRequest commentRequest, int productId) {
@@ -97,7 +95,7 @@ public class CommentServiceImpl implements CommentService {
                         String.format("Comment with ID: %s not found", commentId)));
 
         commentRepo.delete(comment);
-       return mapper.map(comment, CommentResponse.class);
+        return mapper.map(comment, CommentResponse.class);
     }
 
     private CommentResponse mapToDto(Comment comment) {

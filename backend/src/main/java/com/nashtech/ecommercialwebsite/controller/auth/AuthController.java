@@ -40,10 +40,10 @@ public class AuthController {
         Account account = userRepository.findAccountByUsername(loginRequest.getUsername())
                 .orElseThrow(() -> new ResourceNotFoundException(("Username is not found")));
 
-        if(!account.getEnabled() || !account.getIsNonLocked())
+        if (!account.getEnabled() || !account.getIsNonLocked())
             throw new BadRequestException(("Account is not valid"));
 
-            Authentication authentication = authenticationManager.authenticate(
+        Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(),
                         loginRequest.getPassword()));
 

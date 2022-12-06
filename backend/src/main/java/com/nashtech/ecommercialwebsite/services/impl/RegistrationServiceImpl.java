@@ -26,17 +26,12 @@ import java.util.Optional;
 @AllArgsConstructor
 public class RegistrationServiceImpl implements RegistrationService {
 
-    private final UserService userService;
-
-    private final UserRepository userRepository;
-
-    private final RoleRepository roleRepository;
-
-    private final ConfirmationTokenService confirmationTokenService;
-
-    private final EmailSender emailSender;
-
     private final static String EMAIL_ALREADY_TAKEN = "Email %s already exist!";
+    private final UserService userService;
+    private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
+    private final ConfirmationTokenService confirmationTokenService;
+    private final EmailSender emailSender;
 
     @Override
     public TokenResponse register(RegistrationRequest request, String roleName) {

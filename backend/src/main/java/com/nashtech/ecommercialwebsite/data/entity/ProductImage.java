@@ -1,14 +1,18 @@
 package com.nashtech.ecommercialwebsite.data.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "product_image")
 @NoArgsConstructor
-@Getter @Setter
+@Getter
+@Setter
 public class ProductImage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +26,4 @@ public class ProductImage {
     @JoinColumn(name = "product_id")
     @Getter(AccessLevel.NONE)
     private Product product;
-
-
 }

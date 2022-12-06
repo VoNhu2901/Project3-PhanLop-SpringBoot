@@ -6,9 +6,6 @@ import com.nashtech.ecommercialwebsite.dto.request.ProductUpdateRequest;
 import com.nashtech.ecommercialwebsite.dto.response.ProductResponse;
 import com.nashtech.ecommercialwebsite.dto.response.SingleProductResponse;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.List;
-
 
 public interface ProductService {
 
@@ -19,11 +16,11 @@ public interface ProductService {
                                    String sortBy,
                                    String sortDirection);
 
-    ProductResponse getAllAvailableProducts( boolean hidden ,
-                                             int pageNo,
-                                             int pageSize,
-                                             String sortBy,
-                                             String sortDirection);
+    ProductResponse getAllAvailableProducts(boolean hidden,
+                                            int pageNo,
+                                            int pageSize,
+                                            String sortBy,
+                                            String sortDirection);
 
     ProductResponse getProductsByBrandName(String brandName,
                                            int pageNo,
@@ -33,7 +30,7 @@ public interface ProductService {
 
     SingleProductResponse saveProduct(ProductRequest productRequest);
 
-    SingleProductResponse updateProduct(int id , ProductUpdateRequest productRequest);
+    SingleProductResponse updateProduct(int id, ProductUpdateRequest productRequest);
 
     SingleProductResponse deleteProduct(int id);
 

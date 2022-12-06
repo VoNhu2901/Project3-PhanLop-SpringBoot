@@ -10,12 +10,13 @@ import javax.persistence.Embeddable;
 import java.io.Serializable;
 
 @Embeddable
-@Getter @Setter
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class BillDetailId implements Serializable {
 
-    @Column(name="bill_id")
+    @Column(name = "bill_id")
     Integer billId;
 
     @Column(name = "product_id")

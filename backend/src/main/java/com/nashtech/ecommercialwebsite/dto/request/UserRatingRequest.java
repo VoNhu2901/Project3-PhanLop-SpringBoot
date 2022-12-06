@@ -7,7 +7,8 @@ import javax.validation.constraints.Min;
 
 @Builder
 @AllArgsConstructor
-@Getter @Setter
+@Getter
+@Setter
 @NoArgsConstructor
 public class UserRatingRequest {
 

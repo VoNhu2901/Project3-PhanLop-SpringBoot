@@ -6,18 +6,17 @@ import com.nashtech.ecommercialwebsite.dto.response.BillPaginationResponse;
 import com.nashtech.ecommercialwebsite.dto.response.BillReportResponse;
 import com.nashtech.ecommercialwebsite.dto.response.BillResponse;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public interface BillService {
 
-    BillResponse orderProducts( BillRequest billRequest);
+    BillResponse orderProducts(BillRequest billRequest);
 
-    BillResponse getBillById( int billId);
+    BillResponse getBillById(int billId);
 
     BillResponse getSingleBillDetail(int billId);
 
-    BillResponse changeBilStatus(int billId, String status) ;
+    BillResponse changeBilStatus(int billId, String status);
 
     List<BillDetailReponse> getBillByAccount();
 
@@ -31,5 +30,6 @@ public interface BillService {
                                                String sortBy,
                                                String sortDir,
                                                String status);
+
     BillReportResponse getSaleReportByDateRange(String dateStart, String dateEnd);
 }

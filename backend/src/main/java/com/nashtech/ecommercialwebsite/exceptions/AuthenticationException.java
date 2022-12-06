@@ -1,6 +1,6 @@
 package com.nashtech.ecommercialwebsite.exceptions;
 
-public class AuthenticationException extends RuntimeException{
+public class AuthenticationException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
 

@@ -5,7 +5,8 @@ import lombok.*;
 import java.util.List;
 
 @Builder
-@Getter @Setter
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductResponse {

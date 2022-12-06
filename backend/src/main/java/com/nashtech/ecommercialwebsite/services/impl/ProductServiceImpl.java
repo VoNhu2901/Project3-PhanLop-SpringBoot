@@ -51,15 +51,14 @@ public class ProductServiceImpl implements ProductService {
 
         String currentUser = authenticationFacadeService.getCurentUsername();
         singleProductResponse.setCurrentUser(currentUser);
-        if(!currentUser.equals("anonymousUser")) {
+        if (!currentUser.equals("anonymousUser")) {
             Account account = userRepository.findAccountByUsername(currentUser)
-                    .orElseThrow(() -> new ResourceNotFoundException("User "+ currentUser+ " not exist"));
+                    .orElseThrow(() -> new ResourceNotFoundException("User " + currentUser + " not exist"));
             Integer userRatingPointsAboutProduct = ratingRepository.getUserRatingPointsByProduct(account.getId(), id);
             RatingResponse ratingResponse =
                     new RatingResponse(ratingPointsFromProduct, userRatingPointsAboutProduct);
             singleProductResponse.setRatingResponse(ratingResponse);
-        }
-        else singleProductResponse.setRatingResponse(new RatingResponse(ratingPointsFromProduct, null));
+        } else singleProductResponse.setRatingResponse(new RatingResponse(ratingPointsFromProduct, null));
 
         return singleProductResponse;
 

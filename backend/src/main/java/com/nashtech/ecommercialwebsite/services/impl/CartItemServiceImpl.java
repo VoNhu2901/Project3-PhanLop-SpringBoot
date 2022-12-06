@@ -21,7 +21,6 @@ import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -109,9 +108,9 @@ public class CartItemServiceImpl implements CartItemService {
         Cart cart = cartService.findCartByUsername(username);
         int cartId = cart.getId();
         int rowEffected = cartItemsRepo.deleteFromCartDetailByID(productId, cartId);
-        if(rowEffected < 1) throw new InternalServerException("Server error, try again!");
+        if (rowEffected < 1) throw new InternalServerException("Server error, try again!");
         else {
-            System.out.println("rs: " +rowEffected);
+            System.out.println("rs: " + rowEffected);
             return CartItemDto.builder()
                     .cartId(cartId)
                     .productId(productId)
@@ -126,7 +125,7 @@ public class CartItemServiceImpl implements CartItemService {
         String username = authenticationFacadeService.getCurentUsername();
 
         Cart cart = cartService.findCartByUsername(username);
-        List<CartDetail> cartDetails =  cart.getCartDetails();
+        List<CartDetail> cartDetails = cart.getCartDetails();
         cartDetails.clear();
         //update every item in cart after changing quantity...
         List<Product> products = productRepository.findAll();
@@ -161,7 +160,6 @@ public class CartItemServiceImpl implements CartItemService {
         savedCart.getCartDetails().forEach(item -> {
             cartResponse.getCartDetails().add(mapToCartResponse(item));
         });
-
         return cartResponse;
     }
 

@@ -10,7 +10,8 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "confirmation_token")
 @NoArgsConstructor
-@Getter @Setter
+@Getter
+@Setter
 public class ConfirmationToken {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +25,7 @@ public class ConfirmationToken {
 
     @ManyToOne
     @JoinColumn(nullable = false,
-    name = "user_id")
+            name = "user_id")
     private Account account;
 
     @Column(nullable = false, name = "expired_at")
@@ -42,20 +43,4 @@ public class ConfirmationToken {
         this.expiredAt = expiredAt;
         this.account = account;
     }
-/*
-    public ConfirmationToken(Long id,
-                             String token,
-                             LocalDateTime createAt,
-                             Account account,
-                             LocalDateTime expiredAt,
-                             LocalDateTime confirmedAt) {
-        this.id = id;
-        this.token = token;
-        this.createAt = createAt;
-        this.account = account;
-        this.expiredAt = expiredAt;
-        this.confirmedAt = confirmedAt;
-    }*/
-
-
 }

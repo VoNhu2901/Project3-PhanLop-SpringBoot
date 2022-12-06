@@ -1,14 +1,15 @@
 package com.nashtech.ecommercialwebsite.data.entity;
 
-import com.nashtech.ecommercialwebsite.dto.response.RatingResponse;
 import lombok.*;
 
 import javax.persistence.*;
+
 @Entity
 @Table(name = "ratings")
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter @Setter
+@Getter
+@Setter
 @Builder
 /*@NamedNativeQuery(name = "Rating.getUserRatingByProduct",
                   query = "select (select AVG(rating_points) from ratings r where r.product_id = :productId) as productRatingPoints , " +

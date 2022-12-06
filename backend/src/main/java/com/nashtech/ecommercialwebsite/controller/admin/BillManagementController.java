@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.*;
 @Tag(name = "Bills Resources Management",
         description = "Permit to access / change all the bills ordered")
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/admin/api/bills")
 public class BillManagementController {
 
@@ -53,7 +52,7 @@ public class BillManagementController {
                     value = "pageNo", defaultValue = AppConstants.DEFAULT_PAGE_NUMBER, required = false)
                     int pageNo,
             @RequestParam(
-                    value = "pageSize", defaultValue = AppConstants.DEFAULT_PAGE_SIZE , required = false)
+                    value = "pageSize", defaultValue = AppConstants.DEFAULT_PAGE_SIZE, required = false)
                     int pageSize,
             @RequestParam(
                     value = "sortBy", defaultValue = "id", required = false)
@@ -62,7 +61,7 @@ public class BillManagementController {
                     value = "sortDir", defaultValue = "desc", required = false)
                     String sortDir) {
 
-        return billService.getAllBills(pageNo, pageSize, sortBy, sortDir );
+        return billService.getAllBills(pageNo, pageSize, sortBy, sortDir);
     }
 
     @GetMapping("/{status}")
@@ -88,7 +87,7 @@ public class BillManagementController {
                     value = "pageNo", defaultValue = AppConstants.DEFAULT_PAGE_NUMBER, required = false)
                     int pageNo,
             @RequestParam(
-                    value = "pageSize", defaultValue = AppConstants.DEFAULT_PAGE_SIZE , required = false)
+                    value = "pageSize", defaultValue = AppConstants.DEFAULT_PAGE_SIZE, required = false)
                     int pageSize,
             @RequestParam(
                     value = "sortBy", defaultValue = "id", required = false)
@@ -119,7 +118,7 @@ public class BillManagementController {
                     content = {@Content(examples = {@ExampleObject()})})
     })
     @ResponseStatus(HttpStatus.OK)
-    public BillResponse getBillByBillId( @PathVariable("id") int id
+    public BillResponse getBillByBillId(@PathVariable("id") int id
     ) {
         return billService.getSingleBillDetail(id);
     }
@@ -144,7 +143,7 @@ public class BillManagementController {
     })
     @ResponseStatus(HttpStatus.OK)
     public BillResponse changeBillStatus(@RequestParam("bill") int billId,
-            @RequestParam("status") String status) {
+                                         @RequestParam("status") String status) {
         return billService.changeBilStatus(billId, status);
     }
 

@@ -32,31 +32,31 @@ public class RegistrationController {
     @Operation(summary = "Register feature",
             description = "This create accounts for customers and send token to customer's email for verification")
     @ApiResponses(value = {
-            @ApiResponse( responseCode = "201", description = "OK - Successfully created account"),
-            @ApiResponse( responseCode = "400",
+            @ApiResponse(responseCode = "201", description = "OK - Successfully created account"),
+            @ApiResponse(responseCode = "400",
                     description = "Bad Request - The request is invalid",
                     content = {@Content(examples = {@ExampleObject(value = "")})}),
             @ApiResponse(responseCode = "500",
                     description = "Internal Error - There were some error while processing in server",
                     content = {@Content(examples = {@ExampleObject()})})
     })
-    public TokenResponse register(@Valid @RequestBody RegistrationRequest registrationRequest){
+    public TokenResponse register(@Valid @RequestBody RegistrationRequest registrationRequest) {
         return registrationService.register(registrationRequest, USER_ROLE);
     }
 
     @GetMapping(path = "/registration/confirm")
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Gmail confirm to enable account",
-            description = "This check the token is valid or not then active the customer's account" )
+            description = "This check the token is valid or not then active the customer's account")
     @ApiResponses(value = {
-            @ApiResponse( responseCode = "200", description = "OK - Successfully confirmed"),
-            @ApiResponse( responseCode = "400",
+            @ApiResponse(responseCode = "200", description = "OK - Successfully confirmed"),
+            @ApiResponse(responseCode = "400",
                     description = "Bad Request - The token is invalid",
                     content = {@Content(examples = {@ExampleObject(value = "")})}),
-            @ApiResponse( responseCode = "404",
+            @ApiResponse(responseCode = "404",
                     description = "Not found - The token is not exits",
                     content = {@Content(examples = {@ExampleObject(value = "")})}),
-            @ApiResponse( responseCode = "404",
+            @ApiResponse(responseCode = "404",
                     description = "Not found - The request resources was not found",
                     content = {@Content(examples = {@ExampleObject(value = "")})}),
             @ApiResponse(responseCode = "500",

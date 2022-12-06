@@ -4,12 +4,12 @@ import com.nashtech.ecommercialwebsite.data.entity.Account;
 import com.nashtech.ecommercialwebsite.data.repository.UserRepository;
 import com.nashtech.ecommercialwebsite.dto.response.LoginStatusResponse;
 import com.nashtech.ecommercialwebsite.exceptions.ResourceNotFoundException;
-import com.nashtech.ecommercialwebsite.exceptions.UnauthorizedException;
 import com.nashtech.ecommercialwebsite.security.jwt.JwtUtils;
 import com.nashtech.ecommercialwebsite.services.JwtService;
 import com.nashtech.ecommercialwebsite.services.LoginStatusService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
 import javax.servlet.http.HttpServletRequest;
 
 @Service

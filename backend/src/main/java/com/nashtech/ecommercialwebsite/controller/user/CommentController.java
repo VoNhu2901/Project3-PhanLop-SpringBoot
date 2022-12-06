@@ -14,11 +14,11 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
 import javax.validation.Valid;
 
 @Tag(name = "Comment about product feature",
         description = "This include comment about product, delete comment, show coment list by product")
-@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @AllArgsConstructor
 @RequestMapping("/user/api/comments")
@@ -52,8 +52,7 @@ public class CommentController {
             @RequestParam(
                     value = "sortDir", defaultValue = "desc", required = false)
                     String sortDir,
-            @PathVariable("productId") int productId)
-    {
+            @PathVariable("productId") int productId) {
         return commentService.getAllCommentsByProduct(pageNo, pageSize, sortBy, sortDir, productId);
     }
 
@@ -74,7 +73,7 @@ public class CommentController {
     @ResponseStatus(HttpStatus.CREATED)
     public CommentResponse commentProduct(@Valid @RequestBody CommentRequest commentRequest,
                                           @PathVariable("productId") int productId) {
-        return commentService.comment(commentRequest,  productId);
+        return commentService.comment(commentRequest, productId);
     }
 
     @DeleteMapping("/{commentId}")

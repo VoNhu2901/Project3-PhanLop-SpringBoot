@@ -6,13 +6,14 @@ import lombok.Setter;
 
 import javax.validation.constraints.NotNull;
 
-@Getter @Setter
+@Getter
+@Setter
 @AllArgsConstructor
 public class UserRequest {
 
     @NotNull(message = "User enabled status is required")
-    private  Boolean isEnabled;
+    private Boolean isEnabled;
 
     @NotNull(message = "User isNonLocked status is required")
-    private  Boolean isNonLocked;
+    private Boolean isNonLocked;
 }
