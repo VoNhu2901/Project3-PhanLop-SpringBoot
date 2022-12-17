@@ -171,6 +171,18 @@ public class ProductServiceImpl implements ProductService {
         return getContent(products);
     }
 
+    @Override
+    public ProductResponse getAllProductsSelling(boolean b, int pageNo, int pageSize, String sortBy, String sortDir) {
+        Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending()
+                : Sort.by(sortBy).descending();
+
+        //create pageable instance
+        Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
+        Page<Product> products = productRepository.findProductSelling(pageable);
+
+        return getContent(products);
+    }
+
 
     //convert product entity to ProductDto
     private ProductDto maptoDTO(Product product) {

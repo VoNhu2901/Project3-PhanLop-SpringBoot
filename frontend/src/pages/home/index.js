@@ -1,13 +1,13 @@
 import React from "react";
 import Footer from "../../components/footer/Footer";
 import Discount from "../../components/services/Discount";
-import ListProduct from "../../components/product/home/ListProduct";
+import ContainerProduct from "../../components/product/home/ContainerProduct";
 
 
 export default function HomePage() {
     return (
         <>
-            <ListProduct />
+            <ContainerProduct />
             <Discount />
             <Footer />
         </>

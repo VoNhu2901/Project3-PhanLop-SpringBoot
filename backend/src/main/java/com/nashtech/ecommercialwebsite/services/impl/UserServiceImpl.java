@@ -78,7 +78,7 @@ public class UserServiceImpl implements UserService {
         //create pageable instance
         Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
         // get role where name = "USER"
-        Role role = roleRepository.findRolesByRoleName(USER_ROLE_NAME)
+        Role role = roleRepository.findByRoleName(USER_ROLE_NAME)
                 .orElseThrow(
                         () -> new ResourceNotFoundException(
                                 String.format(USER_ROLE_NOT_FOUND_MSG,

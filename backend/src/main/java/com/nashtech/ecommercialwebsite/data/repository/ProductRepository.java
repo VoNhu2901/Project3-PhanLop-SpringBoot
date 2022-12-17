@@ -21,4 +21,8 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
     @Query(value = "select  id from products where hidden = ?1 ", nativeQuery = true)
     List<Integer> findAllProductIds(boolean hidden);
 
+    @Query(value = "select p.* " +
+            "from products p, bill_detail bd " +
+            "where p.id = bd.product_id ", nativeQuery = true)
+    Page<Product> findProductSelling(Pageable pageable);
 }

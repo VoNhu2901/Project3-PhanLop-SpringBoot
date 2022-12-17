@@ -14,13 +14,13 @@ import "./css/Pagination.css";
 import "./css/slicknav.min.css";
 import "./css/style.css";
 
-function ListProduct(props) {
+function ListProductSelling(props) {
   const { brandName } = useParams();
   const { gender } = useParams();
   const [brand, setBrand] = useState();
   const [sex, setSex] = useState("");
 
-  const PRODUCTS_API_BASE_URL = "http://localhost:8080/user/api/products/";
+  const PRODUCTS_API_BASE_URL = "http://localhost:8080/user/api/products/selling";
 
   const PRODUCTS_BY_BRAND_API_BASE_URL = `http://localhost:8080/user/api/products/brand/${brandName}`;
 
@@ -99,7 +99,7 @@ function ListProduct(props) {
       <div className="container-fluid pt-5">
         <div className="text-center mb-4">
           <h2 className="section-title px-5">
-            <span className="px-2">SẢN PHẨM CỦA SHOP</span>
+            <span className="px-2">SẢN PHẨM BÁN CHẠY</span>
           </h2>
           <br />
           <h5 className="section-title px-5">
@@ -171,4 +171,4 @@ function ListProduct(props) {
   );
 }
 
-export default ListProduct;
+export default ListProductSelling;

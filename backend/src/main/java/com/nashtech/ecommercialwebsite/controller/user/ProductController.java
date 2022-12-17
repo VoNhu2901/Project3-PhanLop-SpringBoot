@@ -154,4 +154,39 @@ public class ProductController {
     }
 
 
+    @GetMapping("/selling")
+    @Operation(summary = "Filter products by selling", description = "Provides all products in selling")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "OK - Successfully retrieved"),
+            @ApiResponse(responseCode = "400",
+                    description = "Bad Request - The request is invalid",
+                    content = {@Content(examples = {@ExampleObject()})}),
+            @ApiResponse(responseCode = "404",
+                    description = "Not found - The product list was not found",
+                    content = {@Content(examples = {@ExampleObject()})}),
+            @ApiResponse(responseCode = "500",
+                    description = "Internal Error - There were some error while processing in server",
+                    content = {@Content(examples = {@ExampleObject()})})
+
+    })
+    public ResponseEntity<ProductResponse> getAllProductsSelling(
+            @RequestParam(
+                    value = "pageNo", defaultValue = AppConstants.DEFAULT_PAGE_NUMBER, required = false)
+            int pageNo,
+            @RequestParam(
+                    value = "pageSize", defaultValue = AppConstants.DEFAULT_PAGE_SIZE, required = false)
+            int pageSize,
+            @RequestParam(
+                    value = "sortBy", defaultValue = AppConstants.DEFAULT_SORT_BY, required = false)
+            String sortBy,
+            @RequestParam(
+                    value = "sortDir", defaultValue = AppConstants.DEFAULT_SORT_DIRECTION, required = false)
+            String sortDir
+    ) {
+
+        return new
+                ResponseEntity<>(
+                productService.getAllProductsSelling(false, pageNo, pageSize, sortBy, sortDir),
+                HttpStatus.OK);
+    }
 }

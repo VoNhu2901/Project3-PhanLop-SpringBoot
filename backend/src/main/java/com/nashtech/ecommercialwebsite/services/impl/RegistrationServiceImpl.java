@@ -36,7 +36,7 @@ public class RegistrationServiceImpl implements RegistrationService {
     @Override
     public TokenResponse register(RegistrationRequest request, String roleName) {
 
-        Role userRole = roleRepository.findRolesByRoleName(roleName)
+        Role userRole = roleRepository.findByRoleName(roleName)
                 .orElseThrow(
                         () -> new ResourceNotFoundException(roleName + " ROLE IS NOT EXIST"));
 

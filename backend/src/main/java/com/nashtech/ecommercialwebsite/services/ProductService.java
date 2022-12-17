@@ -41,4 +41,5 @@ public interface ProductService {
                                         String sortDirection);
 
 
+    ProductResponse getAllProductsSelling(boolean b, int pageNo, int pageSize, String sortBy, String sortDir);
 }

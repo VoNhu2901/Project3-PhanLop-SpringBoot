@@ -13,7 +13,6 @@ function Header(props) {
     axios.get(BRAND_API_URL)
     .then(res => setBrands(res.data.brandContent))    
    }, [])
-
     return (
       <header className="header">
         <div className="container-fluid">
@@ -49,9 +48,7 @@ function Header(props) {
                       ))}
                     </ul>
                   </li>
-                  <li>
-                    {/* <Link to="/blog.html">Blog</Link> */}
-                  </li>
+                  <li>{/* <Link to="/blog.html">Blog</Link> */}</li>
                   <li>
                     <Link to="/logout">{props.status ? "Logout" : ""}</Link>
                   </li>
@@ -59,15 +56,17 @@ function Header(props) {
               </nav>
             </div>
             <div className="col-lg-3">
-              <div className="header__right">
-                <div className="header__right__auth">
+              <div className="header__right d-flex">
+                <div className="header__right__auth" style={{fontSize: '1.1em'}}>
                   {!props.status ? (
                     <>
                       <Link to="/login">Login</Link>
                       <Link to="/sigin">Register</Link>
                     </>
                   ) : (
-                    <></>
+                    <>
+                      <span>{props.status ? `${props.name}` : ""}</span>
+                    </>
                   )}
                 </div>
                 <ul className="header__right__widget">

@@ -38,7 +38,7 @@ class RoleRepositoryTest {
         Role actualRole = roleRepository.save(role);
 
         //when
-        Role expectedRole = roleRepository.findRolesByRoleName(role.getRoleName()).get();
+        Role expectedRole = roleRepository.findByRoleName(role.getRoleName()).get();
 
         //then
         assertThat(expectedRole).isNotNull();
